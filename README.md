@@ -8,8 +8,7 @@ Becoming isn't about replacing your agency, it's about **getting you out of your
 
 By building a personalized "mind outside of your mind" that understands your life, your routine, and your short and long term goals you can shift your mental energy from repeated small decision making (should I go to the gym or watch tiktok rn) to the big picture and become the architect of your ideal life. Imagine if you could ask "who do I want to be in six months" have a dialogue that helps you understand the real answer tto that question, and then watch as the organization of your daily routine effortlessly adjusts to get you there. 
 
-**You just don't have to do it all yourself anymore. 
-**
+**You just don't have to do it all yourself anymore.**
 
 ## What This Is
 
