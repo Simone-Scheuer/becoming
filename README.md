@@ -2,8 +2,14 @@
 
 A personal coaching system that runs on Claude Code. It tells you what to do every morning based on your goals and routines, checks if you did it, and adapts over time. 
 
-I built it because I personally believe self-actualization is the biggest unsolved problem of our generation. And I have struggled my entire life to manage the gap between who I am and who I want to become. Becoming isn't about replacing your agency, it's about getting you out of your own way, so that you can actually have it. By building a personalized "mind outside of your mind" that understands your life, your routine, and your short and long term goals you can shift your effort from repeated minute decision making (should I go to the gym or watch tiktok rn) to big picture architectural design of your whole life. Imagine if you could ask "who do I want to be in six months" have a dialogue that helps you understand your own desire, and then watch the organization of your daily routine effortlessly adjust to get you there. You just don't have to do it all yourself anymore. 
+I built it because I personally believe self-actualization is the biggest unsolved problem of our generation. And I have struggled my entire life to manage the gap between who I am and who I want to become. 
 
+Becoming isn't about replacing your agency, it's about **getting you out of your own way**, so that you can actually have it. 
+
+By building a personalized "mind outside of your mind" that understands your life, your routine, and your short and long term goals you can shift your mental energy from repeated small decision making (should I go to the gym or watch tiktok rn) to the big picture and become the architect of your ideal life. Imagine if you could ask "who do I want to be in six months" have a dialogue that helps you understand the real answer tto that question, and then watch as the organization of your daily routine effortlessly adjusts to get you there. 
+
+**You just don't have to do it all yourself anymore. 
+**
 
 ## What This Is
 
