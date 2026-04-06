@@ -1,22 +1,47 @@
 # Goals
 
-*Run `/setup` to fill this in. The system reads this every morning to know what to prescribe.*
+*Last reviewed: not yet. Next review due: after first week.*
 
-*Keep it to 2-4 goals. More than that and nothing gets focus.*
+*Goals are living objects. They're born through /goal add, tracked weekly, reviewed automatically, and can be paused or killed with dignity. Every mutation is logged.*
 
 ---
 
+<!-- Template: populated by /setup and /goal add
+
 ## Goal: [Name]
 
-**What it is:** [One sentence]
+**Status:** active | paused | completed | killed
+**Created:** YYYY-MM-DD
+**Type:** do | be | maintain
+**Value anchor:** [Which value this serves — from values.md]
+**Identity:** [Who you become by doing this. Optional.]
 
-**Done state:** [What "done" looks like this quarter]
+### Done state (this quarter)
+- [Concrete, verifiable outcome]
 
-**Weekly actions:**
-- [Specific, countable. "3 build sessions" not "work on it"]
+### Weekly actions
+- [Countable action]: [target]/week (current: 0/[target] this week)
 
-**Minimum viable (bad day version):**
-- [The floor. What still counts when everything is hard.]
+### Minimum viable (bad day)
+- [The floor version that still counts]
 
-**What to watch:**
-- [The pattern that kills this goal. What the system should catch.]
+### Relationships
+- **Enables:** [Goals this supports]
+- **Competes with:** [Goals sharing time/energy]
+- **Requires:** [Dependencies]
+
+### What to watch
+- [Pattern that threatens this goal]
+
+### History
+| Date | Event |
+|------|-------|
+| YYYY-MM-DD | Created during /setup |
+
+-->
+
+---
+
+## Not Goals (protected zones)
+
+*Activities that stay fun and never become goals. The system explicitly leaves these alone.*
