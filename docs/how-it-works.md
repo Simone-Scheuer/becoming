@@ -62,15 +62,18 @@ The system builds models of how you work — not from assumptions, but from your
 
 Everything is plain text. No database, no cloud, no vendor lock-in.
 
-- `profile.md` — who you are, how you work, your intelligence models
-- `values.md` — what matters to you (inferred, confirmed, refined)
-- `schedule.md` — your weekly time grid
-- `goals.md` — goals with lifecycle metadata
-- `docket.json` — structured task store (system-managed)
-- `patterns.md` — what the system has learned about you
+- `core/profile.md` — who you are, how you work, your intelligence models
+- `core/values.md` — what matters to you (inferred, confirmed, refined)
+- `core/schedule.md` — your weekly time grid
+- `core/goals.md` — goals with lifecycle metadata
+- `core/patterns.md` — what the system has learned about you
+- `data/docket.json` — discrete tasks (system-managed)
+- `data/habits.json` — weekly recurring habits with targets and progress
+- `data/docket-archive.json` — completed/killed task history
 - `weeks/` — weekly plans with daily checkboxes (the sync hub)
 - `checkins/` — daily behavioral data
 - `context/` — optional personal context for deeper coaching
+- `dashboard.html` — live dashboard (serve locally)
 
 ## The Philosophy
 

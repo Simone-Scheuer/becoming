@@ -21,7 +21,7 @@ This skill reads your behavioral data across weeks, surfaces patterns, refines t
 
 ```
 1. git pull
-2. Read ALL files: profile.md, values.md, schedule.md, goals.md, docket.json, patterns.md
+2. Read ALL files: core/profile.md, core/values.md, core/schedule.md, core/goals.md, data/docket.json, core/patterns.md
 3. Read ALL check-in files from the past 4 weeks (or all if < 4 weeks of data)
 4. Read ALL weekly plans from that period
 5. context/ (if present): read all .md files
@@ -34,11 +34,11 @@ This skill reads your behavioral data across weeks, surfaces patterns, refines t
 
 ### 1. Goal Trajectories
 
-For each goal in `goals.md`:
+For each goal in `core/goals.md`:
 - Weekly target completion over the review period (e.g., "Body: 1/3, 2/3, 0/3, 1/3 — declining")
 - Is it alive, dying, dead, or overperforming? (Use same criteria as /goal review)
 - Docket items linked to this goal: count, average age, completion rate
-- Does the goal still serve the value anchor in values.md?
+- Does the goal still serve the value anchor in core/values.md?
 
 ### 2. Behavioral Pattern Analysis
 
@@ -47,7 +47,7 @@ Read all check-in data. Surface:
 **Energy patterns:**
 - What time of day correlates with highest ratings and best output?
 - What activities correlate with energy boosts vs. drains?
-- Does self-reported peak time (profile.md) match actual data?
+- Does self-reported peak time (core/profile.md) match actual data?
 
 **Capacity patterns:**
 - Planned items vs. completed items per day/week
@@ -79,32 +79,32 @@ Read all check-in data. Surface:
 - First-prescribed vs. last-prescribed item: completion rates
 - Which prescription formats get followed most?
 
-### 3. Update patterns.md
+### 3. Update core/patterns.md
 
 Based on the analysis:
 
 - **Reliable Patterns:** Add new patterns with first-observed and confirmed dates. Add confirmation dates to existing patterns.
 - **Emerging:** Observations with only 1-2 data points. Include what would confirm them.
-- **Intelligence Models:** Update with data-confirmed findings. If data contradicts self-report in profile.md, note the divergence: "Self-reported morning peak — data shows afternoon peak after exercise."
+- **Intelligence Models:** Update with data-confirmed findings. If data contradicts self-report in core/profile.md, note the divergence: "Self-reported morning peak — data shows afternoon peak after exercise."
 - **Fusion Patterns:** Add or refine based on check-in content.
 - **Coaching Effectiveness:** Update with prescription-type completion rates.
 - **Stale:** Move patterns not confirmed in 4+ weeks.
 - **Throughput rate:** Update with current calculated rate.
 
-Update `*Last updated: YYYY-MM-DD*` at the top of patterns.md.
+Update `*Last updated: YYYY-MM-DD*` at the top of core/patterns.md.
 
-### 4. Update profile.md (if warranted)
+### 4. Update core/profile.md (if warranted)
 
-If behavioral data reveals something about the user that contradicts or enriches their self-report, update the Intelligence Models section in profile.md. Label data-confirmed findings: "Energy: self-reported morning peak → confirmed by data (7+ ratings correlate with pre-noon deep work)."
+If behavioral data reveals something about the user that contradicts or enriches their self-report, update the Intelligence Models section in core/profile.md. Label data-confirmed findings: "Energy: self-reported morning peak → confirmed by data (7+ ratings correlate with pre-noon deep work)."
 
 ### 5. Check values alignment
 
-Read values.md. For each value:
+Read core/values.md. For each value:
 - Is the user living it? (Check-in data shows behaviors aligned with the value)
 - Is the user NOT living it? (Named value with no supporting behavior)
 - Is there an un-named value being lived? ("You've chosen creative approaches over efficient ones 8 of 10 times. Is there a value there?")
 
-Present findings but don't change values.md without user consent.
+Present findings but don't change core/values.md without user consent.
 
 ### 6. Recalibration check
 
@@ -124,7 +124,7 @@ Format as observations with prescriptions. Not "I notice that..." — "Here's wh
 ### 8. Git sync
 
 ```bash
-git add patterns.md profile.md goals.md
+git add core/patterns.md core/profile.md core/goals.md
 git commit -m "Review YYYY-MM-DD"
 git push
 ```
@@ -138,8 +138,8 @@ Quick diagnostic. Flag each of these:
 ### File Currency
 - [ ] No weekly plan exists for the current week
 - [ ] Most recent weekly plan is older than 10 days
-- [ ] patterns.md hasn't been updated in 14+ days
-- [ ] goals.md hasn't been reviewed (no `/goal review` or auto-review evaluation) in 30+ days
+- [ ] core/patterns.md hasn't been updated in 14+ days
+- [ ] core/goals.md hasn't been reviewed (no `/goal review` or auto-review evaluation) in 30+ days
 
 ### Goal Health
 - [ ] Any goal with zero check-in mentions in 14+ days
@@ -154,13 +154,13 @@ Quick diagnostic. Flag each of these:
 
 ### Data Quality
 - [ ] Check-in streak broken (gap > 2 days in last 2 weeks)
-- [ ] docket.json fails to parse (corruption)
+- [ ] data/docket.json fails to parse (corruption)
 - [ ] Weekly plan has unchecked items from 3+ days ago (sync failure)
 
 ### Profile Completeness
-- [ ] Intelligence models in profile.md still all marked as self-report (no data confirmation yet)
+- [ ] Intelligence models in core/profile.md still all marked as self-report (no data confirmation yet)
 - [ ] Protected zones not defined
-- [ ] Schedule.md has blank entries
+- [ ] core/schedule.md has blank entries
 
 ### Output
 
@@ -174,7 +174,7 @@ Present as a clean checklist with pass/fail and recommended actions:
 ✗ 4 docket items rolling 7+ days — triage needed
 ✗ Career goal: zero docket items — add tasks or flag for /goal review
 ✓ Check-in streak intact (42 days)
-✓ docket.json valid
+✓ data/docket.json valid
 
 Recommendations:
 1. Run docket triage: kill or do the 4 stale items

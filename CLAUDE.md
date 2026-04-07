@@ -10,7 +10,7 @@ Run `/setup`. It takes 15 minutes. You'll answer some questions and the system w
 
 **Morning:** Run `/checkin`. The system reads your goals, schedule, tasks, and what happened yesterday. It tells you what to do today — time-slotted into your real free blocks, ordered by what matters most. You negotiate if you want. Then you go do it.
 
-**Evening:** Run `/checkin evening`. Score what happened. The system updates everything — your task list, your weekly plan checkboxes, your goal progress counts. Tomorrow's morning check-in reads tonight's updates. Nothing falls through the cracks.
+**Evening:** Run `/checkin evening`. Score what happened, triage the docket, track habits. The system updates everything — your task list, your weekly plan checkboxes, your habit progress. Tomorrow's morning check-in reads tonight's updates. Nothing falls through the cracks.
 
 **Weekly:** Run `/checkin weekly` on Sunday or Monday. Review last week's data, set this week's targets, build a daily plan fitted to your schedule.
 
@@ -18,17 +18,22 @@ Run `/setup`. It takes 15 minutes. You'll answer some questions and the system w
 
 **Review:** Run `/review` for a pattern analysis across weeks of data. `/review health` to check if the system itself needs maintenance.
 
+**Dashboard:** Open `dashboard.html` in a browser (serve with `python3 -m http.server`) for a live view of habits, docket, today's plan, and deadlines.
+
 ## Your Files
 
-- `profile.md` — who you are, how you work, coaching style (built during /setup, enriched over time)
-- `values.md` — what matters to you (inferred during /setup, refined as the system learns)
-- `schedule.md` — your weekly time grid: fixed blocks, free blocks, constraints
-- `goals.md` — what you're working toward, with lifecycle metadata
-- `docket.json` — your task list (system-managed structured data — don't edit directly)
-- `patterns.md` — what the system has learned about you (system-maintained)
+- `core/profile.md` — who you are, how you work, coaching style (built during /setup, enriched over time)
+- `core/values.md` — what matters to you (inferred during /setup, refined as the system learns)
+- `core/schedule.md` — your weekly time grid: fixed blocks, free blocks, constraints
+- `core/goals.md` — what you're working toward, with lifecycle metadata
+- `core/patterns.md` — what the system has learned about you (system-maintained)
+- `data/habits.json` — weekly recurring habits with targets and progress (the rhythm layer)
+- `data/docket.json` — discrete tasks only (things that end — system-managed, don't edit directly)
+- `data/docket-archive.json` — completed/killed tasks (history)
 - `weeks/` — weekly plans with daily checkboxes (the sync hub — evening check-ins update these)
 - `checkins/` — daily check-in files (your behavioral data over time)
 - `context/` — optional personal context layer (power users add files here for deeper coaching)
+- `dashboard.html` — live dashboard (serve locally, auto-refreshes every 30s)
 
 ## How the Intelligence Works
 

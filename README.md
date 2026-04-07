@@ -79,11 +79,17 @@ The system was designed by someone with ADHD who failed spectacularly at every p
 ## Files
 
 ```
-profile.md      — who you are, how you work (built during /setup)
-goals.md        — your goals with weekly targets
-docket.md       — rolling task list
-weeks/          — weekly plans
-checkins/       — daily check-in files
+core/profile.md         — who you are, how you work (built during /setup)
+core/values.md          — what matters to you
+core/schedule.md        — your weekly time grid
+core/goals.md           — your goals with weekly targets
+core/patterns.md        — what the system learns about you
+data/docket.json        — discrete tasks
+data/habits.json        — weekly recurring habits
+data/docket-archive.json — completed/killed task history
+weeks/                  — weekly plans
+checkins/               — daily check-in files
+dashboard.html          — live dashboard
 ```
 
 ## Questions?

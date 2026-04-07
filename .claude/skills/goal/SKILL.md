@@ -24,12 +24,12 @@ Goals are living objects. They're born through dialogue, tracked weekly, reviewe
 ## Before Anything: Load Context
 
 ```
-1. Read goals.md              — current goals with metadata
-2. Read schedule.md           — available time blocks
-3. Read values.md             — what the user values (goals must serve a value)
-4. Read profile.md            — coaching style, intelligence models
-5. Read patterns.md           — behavioral patterns, throughput rate
-6. Read docket.json           — tasks linked to goals
+1. Read core/goals.md         — current goals with metadata
+2. Read core/schedule.md      — available time blocks
+3. Read core/values.md        — what the user values (goals must serve a value)
+4. Read core/profile.md       — coaching style, intelligence models
+5. Read core/patterns.md      — behavioral patterns, throughput rate
+6. Read data/docket.json      — tasks linked to goals
 7. Read last 2 weeks of checkins/ — recent behavioral data
 8. context/ (if present)      — additional context
 ```
@@ -63,16 +63,16 @@ This is the Architect half. When the user says "I want to run a marathon," the s
 ### Phase 1: Desire Clarification
 
 - "Is this a 'do' goal (run a specific marathon), a 'be' goal (become a runner), or a 'maintain' goal (keep exercise consistent)?"
-- "What value does this serve?" Check values.md. If it clearly maps to an existing value, confirm. If not, ask: "I don't see an obvious value match. Is there a new value emerging, or does this connect to [closest match]?"
+- "What value does this serve?" Check core/values.md. If it clearly maps to an existing value, confirm. If not, ask: "I don't see an obvious value match. Is there a new value emerging, or does this connect to [closest match]?"
 - "What does done look like this quarter? Not perfectly — roughly."
 - "Is there an identity attached to this? Who do you become by doing it?" (Optional — skip if they don't connect with it.)
 
 ### Phase 2: Feasibility Check
 
-Read `schedule.md` and `goals.md`. Do the math:
+Read `core/schedule.md` and `core/goals.md`. Do the math:
 
 - Count available free blocks per week
-- Sum existing goals' weekly action time (use `time_minutes` from docket.json for related tasks, or estimate)
+- Sum existing goals' weekly action time (use `time_minutes` from data/docket.json for related tasks, or estimate)
 - Estimate new goal's time requirements
 - Surface conflicts:
 
@@ -97,7 +97,7 @@ If under capacity: "This fits. You have ~[buffer] hours of buffer."
 
 ### Phase 5: Write
 
-Write the goal to `goals.md` with full metadata:
+Write the goal to `core/goals.md` with full metadata:
 - Status: active
 - Created: today
 - Type: (from phase 1)
@@ -106,7 +106,7 @@ Write the goal to `goals.md` with full metadata:
 - Done state, weekly actions, minimum viable, relationships, what to watch
 - History: "Created during /goal add"
 
-If the goal implies immediate tasks, add them to `docket.json`:
+If the goal implies immediate tasks, add them to `data/docket.json`:
 - e.g., "Research beginner marathon plans" (goal: Running, time: 30min, energy: low)
 
 Suggest adjustments to the current weekly plan if needed.
@@ -117,7 +117,7 @@ Git sync after writing.
 - Does not create goals the user didn't express
 - Does not skip the feasibility check
 - Does not judge goals as good or bad
-- Does not turn protected zones into goals (if they say "I want to make music a goal" — push back: "Music is a protected zone. Making it a goal risks killing the fun. Are you sure?")
+- Does not turn protected zones into goals (if they say "I want to make music a goal" -- push back: "Music is a protected zone. Making it a goal risks killing the fun. Are you sure?")
 - Does not override the user's final decision after the dialogue
 
 ---
@@ -149,9 +149,9 @@ Read all goals. For each one, assess health based on check-in data:
 - Protected zones that are creeping toward goal-like behavior
 
 ### Write changes to:
-- `goals.md` — status changes, target adjustments, history entries
-- `patterns.md` — if the review reveals a new behavioral pattern
-- `docket.json` — if tasks need to be added/removed for adjusted goals
+- `core/goals.md` — status changes, target adjustments, history entries
+- `core/patterns.md` — if the review reveals a new behavioral pattern
+- `data/docket.json` — if tasks need to be added/removed for adjusted goals
 
 ---
 
@@ -164,7 +164,7 @@ Set status to `paused`. Log in History:
 
 Ask: "When should we revisit this? Give me a date or a condition."
 
-If they give a date, add to docket.json as a waiting item:
+If they give a date, add to data/docket.json as a waiting item:
 ```json
 {"id": "t_pause_check", "text": "Revisit paused goal: [name]", "goal": null, "status": "waiting", "waiting_check": "YYYY-MM-DD"}
 ```

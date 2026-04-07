@@ -53,7 +53,7 @@ Ask these questions. Let them talk. Capture everything useful. Weave the intelli
 **People (optional):**
 - "Anyone the system should know about? A partner, roommates, study buddy, collaborator — people who show up in your days?"
 
-Write to `profile.md`. Put intelligence model responses in the Intelligence Models section, explicitly labeled as self-report:
+Write to `core/profile.md`. Put intelligence model responses in the Intelligence Models section, explicitly labeled as self-report:
 ```
 - **Energy:** Self-reported morning peak. Exercise helps focus. Post-lunch crash. (unconfirmed)
 - **Capacity:** ~4 hours discretionary/day on weekdays, more on weekends. (unconfirmed)
@@ -63,7 +63,7 @@ Write to `profile.md`. Put intelligence model responses in the Intelligence Mode
 
 ## Step 3: Build the Schedule (2 min)
 
-From what they told you about their week, populate `schedule.md`:
+From what they told you about their week, populate `core/schedule.md`:
 
 - Fill the weekly grid with their fixed commitments (classes, work, meetings, recurring)
 - Identify free blocks
@@ -88,7 +88,7 @@ Present 2-4 inferred values:
 
 Do these sound right? Anything to add or change?"
 
-Write to `values.md`. For each value, fill in:
+Write to `core/values.md`. For each value, fill in:
 - What it means to them (use their words)
 - How they express it (observable behaviors they described)
 - What threatens it (from their avoidance patterns and what-falls-apart answers)
@@ -110,7 +110,7 @@ From what they told you about what they want to move forward, create goals. Run 
 5. Note relationships between goals
 6. What to watch
 
-Write to `goals.md` with full metadata. Link value anchors to the values from Step 4.
+Write to `core/goals.md` with full metadata. Link value anchors to the values from Step 4.
 
 **Don't force 4 goals.** If they have 2 real ones, that's better than 4 vague ones. If they list 6, help them prioritize: "Which 3-4 of these are real this quarter? The others can be ideas."
 
@@ -120,7 +120,7 @@ Write to `goals.md` with full metadata. Link value anchors to the values from St
 
 "What's on your plate right now? Just dump everything — tasks, errands, deadlines, things that have been bugging you."
 
-Let them talk. For each item, create a docket.json entry:
+Let them talk. For each item, create a data/docket.json entry:
 ```json
 {
   "id": "t001",
@@ -141,18 +141,20 @@ Let them talk. For each item, create a docket.json entry:
 
 Estimate time_minutes and energy level based on the task description. If unsure, ask: "How long would that take? 15 minutes? An hour?"
 
-For recurring tasks (gym, weekly report, etc.):
+For recurring tasks (gym, weekly report, etc.), add them to `data/habits.json` instead:
 ```json
 {
-  "recurring": true,
-  "recurring_target": 3,
-  "recurring_current": 0
+  "id": "h001",
+  "text": "[habit description]",
+  "goal": "[linked goal name or null]",
+  "target": 3,
+  "current": 0
 }
 ```
 
 ---
 
-## Step 7: Initialize patterns.md
+## Step 7: Initialize core/patterns.md
 
 Seed with intake observations. Don't invent patterns — just record what they self-reported:
 
