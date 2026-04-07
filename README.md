@@ -24,6 +24,7 @@ It runs on markdown files and Claude Code. No app, no backend, no account. Liter
 ### Prerequisites
 - [Claude Code](https://claude.ai/code) (requires a Claude subscription)
 - Git
+- superwhisper (or similar free speech to text system) highly reccomended!!!
 
 ### Setup
 
