@@ -6,25 +6,34 @@ I built it because I personally believe self-actualization is the biggest unsolv
 
 Becoming isn't about replacing your agency, it's about **getting you out of your own way**, so that you can actually have it. 
 
-By building a personalized "mind outside of your mind" that understands your life, your routine, and your short and long term goals you can shift your mental energy from repeated small decision making (should I go to the gym or watch tiktok rn) to the big picture and become the architect of your ideal life. Imagine if you could ask "who do I want to be in six months" have a dialogue that helps you understand the real answer tto that question, and then watch as the organization of your daily routine effortlessly adjusts to get you there. 
+By building a personalized "mind outside of your mind" that understands your life, your routine, and your short and long term goals you can shift your mental energy from repeated small decision making (should I go to the gym or watch tiktok rn) to the big picture and become the architect of your ideal life. Imagine if you could ask "who do I want to be in six months," have a dialogue that helps you understand the real answer to that question, and then watch as the organization of your daily routine effortlessly adjusts to get you there. 
 
 **You just don't have to do it all yourself anymore.**
 
-## What This Is
+## Why It Works
 
-Most productivity systems fail (especially for ADHD people) because of two reasons:
-1. friction - if I have to do work (manual data entry, organization, etc) just to know what work I have, it's just not gonna get done! This is the number one reason people quit using these systems. By using a file based system with a coordinating AI agent like Claude, literally all you have to do is talk to it about your day, your goals, or your unfulfilled desire to master the accordion, and it will design your days and weeks for you based on YOUR desires.
+Most productivity systems fail (especially for ADHD people) because they demand effort just to know what effort you need to do. Becoming is designed around six principles:
 
-2. intelligence - setting good, realistic, well paced daily deliverables to work towards your long term goals is a ton of effort, and it's work an algorithmic to-do list simply cannot do for you. By engaging conversationally with an intelligent system that can self organize, you relieve yourself of the mental load of tracking everything you want to do and aren't, and free yourself up to spend more time actually doing it!
+1. **Centralized** — One system holds everything. Goals, tasks, habits, schedule, patterns, journal. No app-switching, no syncing, no "where did I put that."
 
-It runs on markdown files and Claude Code. No app, no backend, no account. Literally anyone could do this. 
+2. **Zero friction** — Just talk to it. Speech-to-text, stream of consciousness, whatever. The system organizes it for you. If you have to do work to know what work you have, you'll never do the work.
+
+3. **Prescriptive, not descriptive** — It doesn't ask "what do you want to do today?" It tells you. Based on your goals, your schedule, your energy, what you've been avoiding, and what's due. You negotiate, not brainstorm.
+
+4. **You're the architect** — You set the direction. "I want to be a product designer." "I want to run again." The system breaks that into weekly targets, daily actions, and time-slotted prescriptions fitted to your actual free blocks. You design your life; it project-manages the days.
+
+5. **It learns you** — The system tracks what you avoid, what correlates with good days, when you're about to crash. Prescriptions get smarter over time because they're based on your behavioral data, not generic advice.
+
+6. **It has a floor** — Every goal has a bad-day version. The system still works when you're at a 3. Most productivity systems only work when you're already motivated. This one is designed for the days you're not.
+
+And it produces something: a **living journal**. Every check-in is saved. Over weeks and months you build a record of who you were, what you did, and how you felt — not because you sat down to journal, but because the system captured it while coaching you. It encourages mindfulness as a side effect of showing up.
 
 ## Getting Started
 
 ### Prerequisites
 - [Claude Code](https://claude.ai/code) (requires a Claude subscription)
 - Git
-- superwhisper (or similar free speech to text system) highly reccomended!!!
+- [SuperWhisper](https://superwhisper.com) or similar speech-to-text — highly recommended! Talking through check-ins is faster and more natural
 
 ### Setup
 
@@ -55,27 +64,36 @@ The system reads your goals and yesterday's data, then tells you what to do toda
 ```
 /checkin evening
 ```
-Score what happened. The system updates your targets and flags patterns.
+Score what happened. The system updates everything.
 
 **Weekly (Sunday or Monday):**
 ```
 /checkin weekly
 ```
-Review last week, set this week's targets.
+Review last week, set this week's targets, clean up your task list.
+
+### Dashboard
+
+Open `dashboard.html` with a local server to see a live view of your habits, tasks, deadlines, and today's plan:
+```bash
+python3 -m http.server 8080
+# then open localhost:8080/dashboard.html
+```
 
 ## How It Works
 
-Every check-in is saved as a markdown file in `checkins/`. When you start a new conversation, the system reads your profile, goals, task list, and recent check-ins. It picks up where it left off.
+Every check-in is saved as a markdown file in `checkins/`. When you start a new conversation, the system reads your profile, goals, task list, habits, and recent check-ins. It picks up where it left off.
 
 Over time, it builds a picture of how you actually work: what you keep doing, what you keep avoiding, what correlates with good days, what falls apart. It uses this to make better prescriptions.
 
-The system was designed by someone with ADHD who failed spectacularly at every productivity system she's ever tried. The design decisions come from me iterating on what actually works:
+The design decisions come from me iterating on what actually works over 60+ days of daily use:
 
-- **Prescribe, don't ask.** Removing the decision load and letting you be the architect of your life rather than getting bogged down with every little thing.
-- **Count everything.** "3/4 sessions this week" is better than "am I doing enough?" One of my biggest problems was not having a sense of my progress. Tracking doesn't need to be work.
-- **Have a floor.** Every goal has a bad-day version. The system still works when you're at a 3. It's a to-do list you can negotiate with, because some days "the gym" is a walk in the park.
-- **Track drift.** Tasks count how long they've been sitting. This one is pretty similar to a to-do list, but I do notice it doesn't make me feel guilt the same way. Claude's friendlier.
-- **Protect play.** Some things stay fun. The system never optimizes them. Cuz sometimes I feel like I need permission to relax :3
+- **Prescribe, don't ask.** Remove the decision load so you can be the architect of your life rather than getting bogged down with every little thing.
+- **Count everything.** "3/4 sessions this week" is better than "am I doing enough?" Tracking doesn't need to be work.
+- **Have a floor.** Every goal has a bad-day version. The system still works when you're at a 3.
+- **Track drift.** Tasks count how long they've been sitting. It's a to-do list you can negotiate with.
+- **Protect play.** Some things stay fun. The system never optimizes them. Because sometimes you need permission to relax.
+- **Separate the layers.** Habits (weekly rhythms) are different from tasks (things that end). They live in different files because they work differently.
 
 ## Files
 
