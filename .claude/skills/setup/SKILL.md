@@ -116,7 +116,15 @@ Write to `core/goals.md` with full metadata. Link value anchors to the values fr
 
 ---
 
-## Step 6: Seed the Docket (1 min)
+## Step 6: Capture Reference Material (1 min)
+
+"Do you have anything you want the system to know about — syllabi, schedules, protocols, class info, anything? You can paste text, drop links, whatever. I'll save it so the system can reference it during check-ins."
+
+If they paste or share anything, save it to `context/` as a named markdown file (e.g., `context/classes.md`, `context/work-schedule.md`). Structure the content but keep their words. If they have nothing, skip this step.
+
+---
+
+## Step 7: Seed the Docket (1 min)
 
 "What's on your plate right now? Just dump everything — tasks, errands, deadlines, things that have been bugging you."
 
@@ -154,7 +162,7 @@ For recurring tasks (gym, weekly report, etc.), add them to `data/habits.json` i
 
 ---
 
-## Step 7: Initialize core/patterns.md
+## Step 8: Initialize core/patterns.md
 
 Seed with intake observations. Don't invent patterns — just record what they self-reported:
 
@@ -179,13 +187,13 @@ Leave Reliable Patterns, Fusion Patterns, Coaching Effectiveness, and Stale empt
 
 ---
 
-## Step 8: Update CLAUDE.md
+## Step 9: Update CLAUDE.md
 
 Fill in the user summary section of CLAUDE.md with their name, role, and a 1-2 sentence overview of their goals.
 
 ---
 
-## Step 9: First Check-in
+## Step 10: First Check-in
 
 Run a morning check-in to show them how it works. Read their goals, their docket, their schedule, and prescribe their day with time-slotted items. Let them react, negotiate, adjust.
 
@@ -193,7 +201,7 @@ End with: "That's the system. Check in tomorrow morning — `/checkin` — and I
 
 ---
 
-## Step 10: Git init + sync
+## Step 11: Git init + sync
 
 ```bash
 git add -A

@@ -106,6 +106,7 @@ core/patterns.md        — what the system learns about you
 data/docket.json        — discrete tasks
 data/habits.json        — weekly recurring habits
 data/docket-archive.json — completed/killed task history
+context/                — drop anything here the system should know (syllabi, protocols, notes)
 weeks/                  — weekly plans
 checkins/               — daily check-in files
 dashboard.html          — live dashboard
