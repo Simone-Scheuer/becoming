@@ -64,6 +64,7 @@ If it's Monday (or if no weekly plan exists for this week in `weeks/`), nudge: "
 Quick status on weekly habits from `data/habits.json`. Show fractions:
 - "Becoming: 2/4 build sessions this week."
 - "Body: 0/3 protocol. Hasn't been touched."
+- "Momo notes: 1/2."
 Use the `current/target` counts from data/habits.json. These were updated by last night's evening check-in.
 
 ### 4. Weather
@@ -76,21 +77,25 @@ Use the `current/target` counts from data/habits.json. These were updated by las
 
 ### 6. Schedule synthesis
 
-Read today's row from `core/schedule.md`. Get current time from step 12 above. Compute:
+Read today's row from `core/schedule.md`. Get current time from step 10 above. Compute:
 - What fixed blocks remain today (classes, appointments, recurring commitments)
 - What free blocks exist between now and end of day
 - Apply constraints from core/schedule.md ("don't prescribe before 9am", "no deep work before class")
 
 **Never prescribe an activity during an occupied block. Never prescribe a 2-hour task when there's 45 minutes free.**
 
-### 7. Docket scan
+### 7. Docket scan (NON-NEGOTIABLE — even if they come in rushing)
+
+**This always happens.** Even if the user skips the structured check-in and comes in mid-thought, the docket scan gets woven into your first response. It doesn't need its own section — just a line or two embedded in whatever you say.
 
 Read `data/docket.json`. Surface:
-- Active items sorted by `days_rolling` (highest first), then by `due` (soonest first)
-- Flag items with `days_rolling >= 3`: "Resume has been sitting 4 days."
+- Flag items with `days_rolling >= 3`: "Ambassador app has been sitting 4 days."
 - Flag items with `days_rolling >= 5`: "Day 5. Do it today or kill it."
 - Flag items with `due` within 2 days: "HW2 due Wednesday at 11am."
+- Flag items with `notes` containing planned windows (e.g. "Tue/Wed this week") that have passed: "Ambassador app was tagged for Tue/Wed — that window passed."
 - Surface `waiting` items where `waiting_check <= today`: "Robert follow-up — you said check Monday."
+
+**If the user didn't run a structured `/checkin` morning, the docket scan still fires the first time they talk to you that day.** No exceptions. The docket has gravity — things don't just sit there silently.
 
 ### 8. Prescribe
 
@@ -171,25 +176,21 @@ This is where all state updates happen. The evening check-in writes to multiple 
 
 ### The conversation:
 
-#### 1. Score each goal
-"Goal 1: did you do the thing? Yes/no/partial. What specifically?"
+**Two messages max.** Present what you know, ask one open question, accept whatever comes back. Don't interrogate.
 
-If `context/treatment.md` exists, also score value directions (engagement, self-care, play — or whatever directions the treatment plan defines).
+#### 1. You score first
+Read the day — morning check-in, mid-day notes, what they've told you. Present your best guess of what happened today across goals and value directions. Let them correct or add.
 
-#### 2. Fullness
-"How full did today feel?" One word, number, or sentence.
+"Here's what I've got: [list]. Rating? Anything I'm missing?"
 
-#### 3. Ranking
-"Overall day, 1-10?"
+**Surface slipped items.** After presenting the day, check the docket and weekly plan for tasks that had a planned window this week but haven't happened yet. Name them briefly: "Ambassador app was tagged for Tue/Wed — still want it this week?" This catches things that aren't overdue by date but are drifting past their intended window.
 
-#### 4. Mood shift
-"Where did you start vs. where are you now?" One sentence.
+#### 2. They respond
+Accept the rating. Accept additions. Accept "that's it." Don't ask follow-ups unless something is genuinely unclear. If a multi-day pattern is visible, name it in one sentence: "Body has been no for 4 days. Tomorrow it goes first."
 
-#### 5. Thread
-Anything to carry forward to tomorrow. A task, a thought, a feeling.
+**Docket triage is embedded here, not a separate step.** If they mention things done/dead/new, capture it. If they don't, you already know what rolled — just update silently.
 
-#### 6. Pattern flag
-If a multi-day pattern is visible (same goal skipped 3+ days, same task rolling, energy declining), name it in one sentence: "Body has been no for 4 days. Tomorrow it goes first."
+**Always end your scoring summary with a "still sitting" line** for any docket item at 3+ days rolling or with a planned window that's passed. Not a question — a statement. "Still sitting: Ambassador app (day 4), blog post (day 6)." They can ignore it or act on it. This is how the docket maintains gravity even in a two-message evening.
 
 ### The sync (after conversation — do ALL of these):
 
@@ -259,7 +260,7 @@ Compare planned vs. actual. Note the gap. If core/patterns.md has a throughput r
 
 ### 2. Capacity modeling
 
-Read `core/schedule.md` → count available hours for the coming week.
+Read `schedule.md` → count available hours for the coming week.
 Read `data/docket.json` → sum `time_minutes` for all active tasks.
 Read `core/patterns.md` → get throughput rate (default 70% if no data yet).
 
@@ -270,7 +271,7 @@ If total task time > realistic capacity: "You have [X] hours of tasks and [Y] re
 ### 3. Build the daily plan
 
 For each day of the coming week:
-- Start with fixed blocks from `core/schedule.md`
+- Start with fixed blocks from `schedule.md`
 - Distribute goal targets across free blocks, respecting:
   - Energy model: deep work in peak blocks, admin in troughs
   - Work style: breadth (goal variety per day) vs. depth (clustering)
@@ -294,8 +295,8 @@ Which goal gets priority this week? Usually the one that collapsed. "Body was 1/
 
 ### 5. Habit review
 
-Present `data/habits.json` with last week's scores:
-- "Protocol: 2/3. Podcast: 1/3. Build sessions: 3/4."
+Present `habits.json` with last week's scores:
+- "Protocol: 2/3. Podcast: 1/3. Build sessions: 3/4. Momo notes: 0/2."
 - Are these still the right habits? Right targets?
 - Any new habits to add? Any to kill?
 - Reset all `current` to 0 and update `week_of` to the new Monday date.
